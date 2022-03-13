@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "a18dd449-309c-4faa-81eb-3c8abdd75378",
+		"name": "Hotel Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MK2S",
+			"item": [
+				{
+					"name": "Restaurants",
+					"item": [
+						{
+							"name": "Create restaurants",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-id-token",
+										"value": "{{x-mk2s-token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"MK2S TEST RESTAURANT\", \r\n     \"code\": \"MK2S\",\r\n     \"email\": \"rockzzsiva1@gmail.com\",\r\n    \"mobile\": \"+918500777641\",\r\n    \"address\" : \"Test address\",\r\n    \"city\": \"New York\",\r\n    \"state\" : \"New York\",\r\n    \"country\": \"USA\",\r\n    \"pincode\" : \"458792\",\r\n    \"order_code\": \"MKO\",\r\n    \"branch\" : {\r\n        \"name\": \"MK2S\",\r\n        \"email\": \"mk2s_hms@googlegroups.com\",\r\n        \"mobile\" : \"+918106302821\",\r\n        \"code\": \"MK2S-1\",\r\n        \"spoc\": {\r\n            \"name\" : \"Siva Kusi\",\r\n            \"email\" : \"sivakusi12@gmail.com\",\r\n            \"mobile\" : \"+918106302821\"\r\n        },\r\n        \"currency_code\" : \"INR\",\r\n        \"timings\" : {},\r\n        \"timezone\": \"Asia/Kolkata\"\r\n    },\r\n    \"owner\": {\r\n        \"name\": \"Kusumanajli Mainampati\",\r\n        \"email\": \"kusumanjali.55@gmail.com\",\r\n        \"mobile\" :\"+918500777641\",\r\n        \"address\"  : \"Test address\",\r\n        \"city\" : \"New York\",\r\n        \"state\" : \"New York\",\r\n        \"country\": \"USA\",\r\n        \"pincode\":\"458792\",\r\n        \"date_of_birth\": \"1998-05-21\",\r\n        \"date_of_joining\" : \"2021-01-06\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mk2s/restaurants",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mk2s",
+										"restaurants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Select restaurants",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-id-token",
+										"value": "{{x-mk2s-token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mk2s/restaurants?page_no=1&limit=10",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mk2s",
+										"restaurants"
+									],
+									"query": [
+										{
+											"key": "page_no",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "apikey",
+						"apikey": [
+							{
+								"key": "value",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW5fdHlwZSI6Ik1LMlMiLCJyb2xlIjoiRW1wbG95ZWUiLCJpYXQiOjE2NDE3MTUzNTEsImV4cCI6MTY0MTg4ODE1MX0.bNfrSubNcUa489deQRr68jxMcqO5xw5WaBnU46hW_tY",
+								"type": "string"
+							},
+							{
+								"key": "key",
+								"value": "{{token_name}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Client",
+					"item": [
+						{
+							"name": "Register a client",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": null
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Register admins for MK2S_LLC",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{x-mk2s-token}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "x-id-token",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Admin\",\r\n    \"username\" : \"0000\",\r\n    \"gender\" : \"Male\",\r\n    \"password\" : \"Admin@123\",\r\n    \"dob\" : \"1998-05-21\",\r\n    \"doj\" : \"2021-02-21\",\r\n    \"email\" : \"siva.kusi12@gmail.com\",\r\n    \"phone\" : \"7842487859\",\r\n    \"address\" : \"10-15\",\r\n    \"city\" : \"Chittoor\",\r\n    \"role\" : \"Owner\",\r\n    \"state\" : \"Andhra Pradesh\",\r\n    \"country\" : \"India\",\r\n    \"pincode\" : \"517419\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mk2s/admin/register",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mk2s",
+										"admin",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin's Login for MK2S_LLC",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"x-mk2s-token\", postman.getResponseHeader('x-id-token'));\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"Admin\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/mk2s/admin/login",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"mk2s",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Username",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/admin/validate/username/MK2S",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"admin",
+										"validate",
+										"username",
+										"MK2S"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Commons",
+			"item": [
+				{
+					"name": "Get countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/assets/commons/countries",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"assets",
+								"commons",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get States",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/assets/commons/currency-codes/:country",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"assets",
+								"commons",
+								"currency-codes",
+								":country"
+							],
+							"variable": [
+								{
+									"key": "country",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/assets/commons/cities/:state",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"assets",
+								"commons",
+								"cities",
+								":state"
+							],
+							"variable": [
+								{
+									"key": "state",
+									"value": "Andhra Pradesh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Currency Codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/assets/commons/states/:country",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"assets",
+								"commons",
+								"states",
+								":country"
+							],
+							"variable": [
+								{
+									"key": "country",
+									"value": "India"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"x-emp-token\", postman.getResponseHeader('x-id-token'));\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "code",
+								"value": "MK2S12",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"siva.kusi\",\r\n    \"password\" : \"GBKr*87E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/employees/login",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"employees",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-emp-token}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "{{token_name}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/employees/my/profile",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"employees",
+								"my",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee list",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{x-emp-token}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "{{token_name}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}/employees/list?limit=10&page_no=1",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"employees",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page_no",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Restaurant Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee Roles",
+			"item": [
+				{
+					"name": "Get Employee Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{x-emp-token}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "{{token_name}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Server Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/test/server/status",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"test",
+						"server",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

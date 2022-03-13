@@ -1,0 +1,39 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "host": "localhost",
+    "port": "3306",
+    "user": "root",
+    "password": "",
+    "database": "corevisualizers",
+    "multipleStatements": true
+  },
+  "staging": {
+    "driver": "mysql",
+    "host": { "ENV": "DB_HOST" },
+    "port": { "ENV": "STAGE_PORT" },
+    "user": { "ENV": "DB_ADMIN_USER" },
+    "password": { "ENV": "DB_ADMIN_PASSWORD" },
+    "database": { "ENV": "DB_DATABASE_NAME" },
+    "multipleStatements": true
+  },
+  "live_dev": {
+    "driver": "mysql",
+    "host": { "ENV": "DB_HOST" },
+    "port": { "ENV": "LIVE_DEV_PORT" },
+    "user": { "ENV": "DB_ADMIN_USER" },
+    "password": { "ENV": "DB_ADMIN_PASSWORD" },
+    "database": { "ENV": "DB_DATABASE_NAME" },
+    "multipleStatements": true
+  },
+  "prod": {
+    "driver": "mysql",
+    "host": { "ENV": "DB_HOST" },
+    "port": { "ENV": "PROD_PORT" },
+    "user": { "ENV": "DB_ADMIN_USER" },
+    "password": { "ENV": "DB_ADMIN_PASSWORD" },
+    "database": { "ENV": "DB_DATABASE_NAME" },
+    "multipleStatements": true
+  },
+  "sql-file": true
+}

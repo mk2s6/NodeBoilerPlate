@@ -1,0 +1,15 @@
+{
+  "name": "MK2S TECH ___ ",
+  "version": "1.0.0",
+  "description": "REST API's available for MK2S TECH ___ . Only JSON format is supported.",
+  "title": "MK2S TECH ___  REST API documentation.",
+  "header": {
+    "title": "Header",
+    "filename": "apidoc_header.md"
+  },
+  "footer": {
+    "title": "Footer",
+    "filename": "apidoc_footer.md"
+  },
+  "private": false
+}

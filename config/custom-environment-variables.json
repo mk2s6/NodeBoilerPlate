@@ -1,0 +1,30 @@
+{
+  "environment": "NODE_ENV",
+  "authJWT": {
+    "secret": "AUTH_JWT_SECRET"
+  },
+  "log_level": "LOG_LEVEL",
+  "log_to_console": "LOG_TO_CONSOLE",
+  "log_handle_exception": "LOG_HANDLE_EXCEPTION",
+  "log_handle_rejection": "LOG_HANDLE_REJECTION",
+  "log_incoming_request": "LOG_INCOMING_REQUEST",
+  "serverConfig": {
+    "port": "PORT"
+  },
+  "dbConfig": {
+    "host": "DB_HOST",
+    "user": "DB_USER",
+    "password": "DB_PASSWORD",
+    "database": "DB_DATABASE_NAME"
+  },
+  "emailBaseLink": "EMAIL_BASE_LINK",
+  "nodeMailerConfig": {
+    "host": "NODEMAILER_HOST",
+    "port": "NODEMAILER_PORT",
+    "email": "NODEMAILER_EMAIL",
+    "password": "NODEMAILER_PASSWORD",
+    "from": "NODEMAILER_FROM",
+    "sender_email": "NODEMAILER_SENDER_EMAIL",
+    "sender_name": "NODEMAILER_SENDER_NAME"
+  }
+}

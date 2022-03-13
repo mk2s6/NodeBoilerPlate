@@ -1,0 +1,69 @@
+{
+  "name": "MK2S_TECH",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devStart": "set DEBUG=barebone-node-project:* & npm run docs & nodemon ./bin/www",
+    "test": "jest --detectOpenHandles --runInBand ./tests",
+    "verboseTest": "jest --detectOpenHandles --verbose true --runInBand ./tests",
+    "failFirstTest": "jest --detectOpenHandles --bail --verbose true --runInBand ./tests",
+    "docs": "apidoc -i routes/ -o docs/ --private false"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "globalSetup": "./tests/global-setup.js",
+    "globalTeardown": "./tests/global-teardown.js",
+    "setupFiles": [
+      "./tests/test-suite-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "./.vscode/",
+      "./bin/",
+      "./config/",
+      "./node_modules/",
+      "./public/",
+      "./samples/",
+      "./tools/"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "cron": "^1.7.1",
+    "date-and-time": "^0.14.2",
+    "db-migrate-mysql": "^2.1.1",
+    "debug": "~2.6.9",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^6.14.0",
+    "generate-password": "^1.7.0",
+    "http-errors": "~1.6.2",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.24.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.1",
+    "mysql2": "^1.6.4",
+    "nodemailer": "^6.7.2",
+    "password-validator": "^4.1.1",
+    "pify": "^4.0.1",
+    "shortid": "^2.2.15",
+    "validator": "^13.7.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "apidoc": "^0.50.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^27.4.7"
+  },
+  "apidoc": {
+    "url": "http://localhost:4200/",
+    "showRequiredLabels": true
+  }
+}
